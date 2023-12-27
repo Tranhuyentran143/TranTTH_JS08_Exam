@@ -67,9 +67,24 @@ app.put("/api/v1/todos/:id", (req, res) => {
   res.status(200).json(req.body)
 });
 
+app.delete("/api/v1/todos/:id", (req, res) => {
+  const jsonString = fs.readFileSync((path.join(__dirname, "./data/dotos.json")));
+    const jsonData = JSON.parse(jsonString);
 
+  const user = req.params.id;
 
+  const indexToDelete = jsonData.findIndex(data => data.id == user);
 
+  if (indexToDelete !== -1) {
+    jsonData.splice(indexToDelete, 1);
+
+    fs.writeFileSync(path.join(__dirname, "./data/dotos.json"), JSON.stringify(jsonData, null, 2), { encoding: "utf-8" });
+
+    res.status(200).json('Delete successfully');
+  } else {
+    res.status(404).json('Todo not found');
+  }
+});
 
 app.listen(8082, () => {
   console.log("server is running on port 8082");

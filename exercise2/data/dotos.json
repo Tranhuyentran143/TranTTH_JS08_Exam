@@ -1,12 +1,6 @@
 [
   {
     "userId": 1,
-    "id": 1,
-    "title": "delectus aut autem",
-    "completed": false
-  },
-  {
-    "userId": 1,
     "id": 2,
     "title": "quis ut nam facilis et officia qui",
     "completed": false
@@ -172,12 +166,6 @@
     "id": 29,
     "title": "laborum aut in quam",
     "completed": false
-  },
-  {
-    "userId": 2,
-    "id": 30,
-    "title": "nemo perspiciatis repellat ut dolor libero commodi blanditiis omnis",
-    "completed": true
   },
   {
     "userId": 2,
